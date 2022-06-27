@@ -15,10 +15,12 @@ func _physics_process(delta):
 	frames += 1
 	total_time += delta
 	velocity.y += delta * gravity
-	var collisions = move_and_collide(velocity*delta)
-	if collisions:
-		print(collisions)
-		print(total_time)
+	# var collisions = move_and_collide(velocity*delta)
+	translation = translation + velocity*delta
+	
+#	if collisions:
+#		print(collisions)
+#		print(total_time)
 		# queue_free()
 
 func _exit_tree():  # close the window
