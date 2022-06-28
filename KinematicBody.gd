@@ -6,8 +6,6 @@ onready var gravity = -ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var frames = 0
 
-signal start_rigid
-
 var total_time = 0
 
 
@@ -15,8 +13,8 @@ func _physics_process(delta):
 	frames += 1
 	total_time += delta
 	velocity.y += delta * gravity
-	# var collisions = move_and_collide(velocity*delta)
-	translation = translation + velocity*delta
+	var collisions = move_and_collide(velocity*delta)
+	# translation = translation + velocity*delta
 	
 #	if collisions:
 #		print(collisions)

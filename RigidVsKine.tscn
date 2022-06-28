@@ -52,4 +52,3 @@ shape = SubResource( 4 )
 transform = Transform( -0.371133, 0.246465, -0.895274, 0.00235786, 0.96438, 0.264512, 0.928577, 0.0960582, -0.358495, -13.36, 8.37197, -8.35316 )
 
 [connection signal="ready" from="KinematicBody" to="RigidBody" method="_on_KinematicBody_ready"]
-[connection signal="start_rigid" from="KinematicBody" to="RigidBody" method="_on_KinematicBody_start_rigid"]
