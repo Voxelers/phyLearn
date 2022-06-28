@@ -27,7 +27,8 @@ shape = SubResource( 1 )
 mesh = SubResource( 2 )
 
 [node name="KinematicBody" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86886, 8.19691, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 10, 0 )
+motion/sync_to_physics = true
 script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="KinematicBody"]
@@ -38,7 +39,7 @@ material/0 = SubResource( 5 )
 shape = SubResource( 4 )
 
 [node name="RigidBody" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.16578, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="RigidBody"]
 mesh = SubResource( 3 )
@@ -48,4 +49,6 @@ material/0 = null
 shape = SubResource( 4 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -0.371141, 0.240333, -0.896936, 0, 0.965926, 0.258819, 0.928577, 0.0960584, -0.358495, -20.4706, 8.37197, -8.35316 )
+transform = Transform( -0.371133, 0.246465, -0.895274, 0.00235786, 0.96438, 0.264512, 0.928577, 0.0960582, -0.358495, -13.36, 8.37197, -8.35316 )
+
+[connection signal="ready" from="KinematicBody" to="RigidBody" method="_on_KinematicBody_ready"]
